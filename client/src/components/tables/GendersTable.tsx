@@ -20,7 +20,7 @@ const GendersTable = () => {
                 Edit
               </Link>
               <Link to={"/gender/delete"} className="btn btn-danger me-1">
-                Edit
+                Delete
               </Link>
             </td>
           </tr>
@@ -32,7 +32,7 @@ const GendersTable = () => {
                 Edit
               </Link>
               <Link to={"/gender/delete"} className="btn btn-danger me-1">
-                Edit
+                Delete
               </Link>
             </td>
           </tr>
@@ -44,7 +44,7 @@ const GendersTable = () => {
                 Edit
               </Link>
               <Link to={"/gender/delete"} className="btn btn-danger me-1">
-                Edit
+                Delete
               </Link>
             </td>
           </tr>
