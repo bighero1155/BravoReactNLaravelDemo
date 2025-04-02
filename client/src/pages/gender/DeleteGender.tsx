@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AlertMessage from "../../components/AlertMessage";
-import DeleterGenderForm from "../../components/forms/DeleterGenderForm";
+import DeleterGenderForm from "../../components/forms/gender/DeleterGenderForm";
 import MainLayout from "../layout/MainLayout";
 
 const DeleteGender = () => {
