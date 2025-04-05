@@ -3,13 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    public function loadUsers()
+    {
+        $users = User::with(['gender'])
+            ->where('tbl_users.is_deleted', false)
+            ->get();
+
+        return response()->json([
+            'users' => $users
+        ], 200);
+    }
+
     public function storeUser(Request $request)
     {
         $validated = $request->validate([
@@ -23,6 +33,7 @@ class UserController extends Controller
             'contact_number' => ['required'],
             'email' => ['required', 'email', Rule::unique('tbl_users', 'email')],
             'password' => ['required', 'confirmed', 'min:8', 'max:15'],
+            'password_confirmation' => ['required', 'min:8', 'max:15'],
         ]);
 
         $age = date_diff(date_create($validated['birth_date']), date_create('now'))->y;
