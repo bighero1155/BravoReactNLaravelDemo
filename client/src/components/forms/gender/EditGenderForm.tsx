@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import GenderService from "../../../services/GenderService";
 import ErrorHandler from "../../../handler/ErrorHandler";
 import Spinner from "../../Spinner";
-import GenderFieldErrors from "../../../interfaces/GenderFieldErrors";
 import SpinnerSmall from "../../SpinnerSmall";
+import { GenderFieldErrors } from "../../../interfaces/GenderFieldErrors";
 
 interface EditGenderFormProps {
   onGenderUpdate: (message: string) => void;
@@ -137,7 +137,7 @@ const EditGenderForm = ({ onGenderUpdate }: EditGenderFormProps) => {
               )}
             </div>
             <div className="d-flex justify-content-end">
-              <Link to={"/"} className="btn btn-secondary me-1">
+              <Link to={"/genders"} className="btn btn-secondary me-1">
                 Back
               </Link>
               <button
